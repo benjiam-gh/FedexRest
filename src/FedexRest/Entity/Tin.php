@@ -4,17 +4,17 @@ namespace FedexRest\Entity;
 
 class Tin
 {
-    public int $number;
+    public string $number;
     public string $tinType;
     public string $usage;
     public string $effectiveDate;
     public string $expirationDate;
 
     /**
-     * @param int $number
+     * @param string $number
      * @return $this
      */
-    public function setNumber(int $number)
+    public function setNumber(string $number)
     {
         $this->number = $number;
         return $this;
