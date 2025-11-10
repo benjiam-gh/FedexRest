@@ -10,6 +10,7 @@ class Person
     public string $personName = '';
     public string $phoneNumber;
     public string $companyName = '';
+    protected array $tins = [];
 
     /**
      * @param  mixed  $address
@@ -53,6 +54,16 @@ class Person
     }
 
     /**
+     * @param Tin ...$tins
+     * @return $this
+     */
+    public function setTins(Tin ...$tins)
+    {
+        $this->tins = $tins;
+        return $this;
+    }
+
+    /**
      * @return array[]
      */
     public function prepare(): array
@@ -70,6 +81,14 @@ class Person
 
         if ($this->address != null) {
             $data['address'] = $this->address->prepare();
+        }
+
+        if (!empty($this->tins)) {
+            $tins = [];
+            foreach ($this->tins as $tin) {
+                $tins[] = $tin->prepare();
+            }
+            $data['tins'] = $tins;
         }
         return $data;
     }
