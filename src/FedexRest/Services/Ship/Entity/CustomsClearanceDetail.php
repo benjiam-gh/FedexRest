@@ -75,7 +75,7 @@ class CustomsClearanceDetail
      * @param string  $freightOnValue
      * @return $this
      */
-    public function setFreightOnValuee(string $freightOnValue): CustomsClearanceDetail
+    public function setFreightOnValue(string $freightOnValue): CustomsClearanceDetail
     {
         $this->freightOnValue = $freightOnValue;
         return $this;
@@ -202,7 +202,7 @@ class CustomsClearanceDetail
         if (!empty($this->freightOnValue)) {
             $data['freightOnValue'] = $this->freightOnValue;
         }
-        if (!is_null($this->isDocumentOnly)) {
+        if (!empty($this->isDocumentOnly)) {
             $data['isDocumentOnly'] = $this->isDocumentOnly;
         }
         if (!empty($this->recipientCustomsId)) {
@@ -223,7 +223,7 @@ class CustomsClearanceDetail
         if (!empty($this->totalCustomsValue)) {
             $data['totalCustomsValue'] = $this->totalCustomsValue;
         }
-        if (!is_null($this->partiesToTransactionAreRelated)) {
+        if (!empty($this->partiesToTransactionAreRelated)) {
             $data['partiesToTransactionAreRelated'] = $this->partiesToTransactionAreRelated;
         }
         if (!empty($this->declarationStatementDetail)) {
