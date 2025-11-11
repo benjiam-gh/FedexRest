@@ -11,6 +11,7 @@ class Person
     public string $phoneNumber;
     public string $companyName = '';
     protected array $tins = [];
+    public string $emailAddress;
 
     /**
      * @param  mixed  $address
@@ -64,6 +65,16 @@ class Person
     }
 
     /**
+     * @param  string  $emailAddress
+     * @return $this
+     */
+    public function setEmailAddress(string $emailAddress)
+    {
+        $this->emailAddress = $emailAddress;
+        return $this;
+    }
+
+    /**
      * @return array[]
      */
     public function prepare(): array
@@ -77,6 +88,9 @@ class Person
         }
         if (!empty($this->companyName)) {
             $data['contact']['companyName'] = $this->companyName;
+        }
+        if (!empty($this->emailAddress)) {
+            $data['contact']['emailAddress'] = $this->emailAddress;
         }
 
         if ($this->address != null) {
