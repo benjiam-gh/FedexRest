@@ -25,7 +25,7 @@ class CustomsClearanceDetail
      * @param array  $dutiesPayment
      * @return $this
      */
-    public function setSpecialServiceTypes(array $dutiesPayment): CustomsClearanceDetail
+    public function setDutiesPayment(array $dutiesPayment): CustomsClearanceDetail
     {
         $this->dutiesPayment = $dutiesPayment;
         return $this;
